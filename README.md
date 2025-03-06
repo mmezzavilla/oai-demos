@@ -37,3 +37,7 @@ sudo ./quectel-CM -s oai
 ```
 sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.conf --nokrnmod --sa --usrp-tx-thread-config 1 --tune-offset 30000000 --gNBs.[0].min_rxtxtime 5
 ```
+## OAI UE
+```
+-C 3619200000 -r 106 --numerology 1 --ssb 516
+```
