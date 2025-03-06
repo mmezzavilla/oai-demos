@@ -20,12 +20,14 @@ echo "2c7c 0801" | sudo tee /sys/bus/usb/drivers/qmi_wwan/new_id
 ```
 
 If this is what you see: 
+```
 Bus 06.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/2p, 10000M
     |__ Port 2: Dev 2, If 0, Class=Vendor Specific Class, Driver=option, 10000M
     |__ Port 2: Dev 2, If 1, Class=Vendor Specific Class, Driver=option, 10000M
     |__ Port 2: Dev 2, If 2, Class=Vendor Specific Class, Driver=option, 10000M
     |__ Port 2: Dev 2, If 3, Class=Vendor Specific Class, Driver=option, 10000M
     |__ Port 2: Dev 2, If 4, Class=Vendor Specific Class, Driver=qmi_wwan, 10000M
+```
 
 You are ready to launch the quectel-oai script: 
 ```
