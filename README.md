@@ -42,7 +42,13 @@ sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.co
 sudo ./nr-uesoftmodem -C 3619200000 -r 106 --numerology 1 --ssb 516 --ue-fo-compensation -E --uicc0.imsi 001010000000001 --ue-txgain 10 --ue-rxgain 100 -d
 ```
 
-## OAI gNodeB at FR3 (modify att_tx and att_rx)
+## OAI gNodeB at FR3 
+
+First and foremost, enable FR3 from usrp_lib.cpp and run
+```
+sudo ./build_oai -w USRP
+```
+Then, you can launch the gNodeB with the same command. Make sure you set att_tx = 40 and att_rx = 20 in the config file.   
 ```
 sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.conf --nokrnmod --sa --usrp-tx-thread-config 1 --tune-offset 30000000 --gNBs.[0].min_rxtxtime 5
 ```
