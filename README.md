@@ -59,4 +59,6 @@ sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.co
 sudo ./nr-uesoftmodem -C 3619200000 -r 106 --numerology 1 --ssb 516 --ue-fo-compensation -E --time-source 1 --clock-source 1 --uicc0.imsi 001010000000001 --ue-txgain 10 --ue-rxgain 100 -d
 ```
 
+# OAI notes
+https://docs.google.com/document/d/117JxyvUStMudBnMqmVWtjznl5dOxheBT28dS8kYadgY/edit?pli=1&tab=t.0
 
