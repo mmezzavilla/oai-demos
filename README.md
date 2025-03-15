@@ -35,7 +35,7 @@ sudo ip link set wwan0 up
 sudo ./quectel-CM -s oai
 ```
 
-## OAI gNodeB at FR1
+## OAI gNodeB at FR1 (att_tx=0, att_rx=0)
 ```
 sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.conf --nokrnmod --sa --usrp-tx-thread-config 1 --tune-offset 30000000 --gNBs.[0].min_rxtxtime 5
 ```
