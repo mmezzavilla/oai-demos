@@ -39,7 +39,7 @@ sudo ./quectel-CM -s oai
 ```
 sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.conf --nokrnmod --sa --usrp-tx-thread-config 1 --tune-offset 30000000 --gNBs.[0].min_rxtxtime 5
 ```
-## OAI UE at FR1 (cabled with 40 dB attenuation) 
+## OAI UE at FR1 
 ```
 sudo ./nr-uesoftmodem -C 3619200000 -r 106 --numerology 1 --ssb 516 --ue-fo-compensation -E --uicc0.imsi 001010000000001 --ue-txgain 10 --ue-rxgain 120 --time-source 1 --clock-source 1 -d
 
