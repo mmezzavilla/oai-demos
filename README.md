@@ -41,7 +41,7 @@ sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.co
 ```
 ## OAI UE at FR1 
 ```
-sudo ./nr-uesoftmodem -C 3619200000 -r 106 --numerology 1 --ssb 516 --ue-fo-compensation -E --uicc0.imsi 001010000000001 --ue-txgain 10 --ue-rxgain 120 --time-source 1 --clock-source 1 -d
+sudo ./nr-uesoftmodem -C 3619200000 -r 106 --numerology 1 --ssb 516 --ue-fo-compensation -E --uicc0.imsi 001010000000001 --ue-txgain 10 --ue-rxgain 120 --time-source 1 --clock-source 1 -d 2>&1 | tee ue_split8.log
 
 ```
 
