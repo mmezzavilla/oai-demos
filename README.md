@@ -37,11 +37,11 @@ sudo ./quectel-CM -s oai
 
 ## OAI gNodeB at FR1 (att_tx=0, att_rx=0)
 ```
-sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.conf --nokrnmod --sa --usrp-tx-thread-config 1 --tune-offset 30000000 --gNBs.[0].min_rxtxtime 5
+sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.conf --nokrnmod --usrp-tx-thread-config 1 --tune-offset 30000000 --gNBs.[0].min_rxtxtime 5
 ```
 ## OAI UE at FR1 
 ```
-sudo ./nr-uesoftmodem -C 3619200000 -r 106 --numerology 1 --ssb 516 --ue-fo-compensation -E --uicc0.imsi 001010000000001 --ue-txgain 10 --ue-rxgain 120 --time-source 1 --clock-source 1 -d 2>&1 | tee ue_split8.log
+sudo ./nr-uesoftmodem -C 3619200000 -r 106 --numerology 1 --ssb 516 --ue-fo-compensation -E --uicc0.imsi 001010000000001 --ue-txgain 10 --ue-rxgain 85 --time-source 1 --clock-source 1 -d 2>&1 | tee ue_split8.log
 
 ```
 
