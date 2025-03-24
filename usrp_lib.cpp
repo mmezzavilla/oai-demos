@@ -23,6 +23,9 @@
  *
  * \author: HongliangXU : hong-liang-xu@agilent.com
  */
+
+#define FR3
+#define FR3_FREQ 1000000000
 #define _LARGEFILE_SOURCE
 #define _FILE_OFFSET_BITS 64
 #include <string.h>
