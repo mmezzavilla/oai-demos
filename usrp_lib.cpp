@@ -23,9 +23,6 @@
  *
  * \author: HongliangXU : hong-liang-xu@agilent.com
  */
-
-#define FR3
-#define FR3_FREQ 1000000000
 #define _LARGEFILE_SOURCE
 #define _FILE_OFFSET_BITS 64
 #include <string.h>
@@ -52,6 +49,7 @@
 #include "common/utils/LOG/log.h"
 #include "common_lib.h"
 #include "assertions.h"
+#include "system.h"
 
 #include "common/utils/LOG/vcd_signal_dumper.h"
 
@@ -821,15 +819,14 @@ void *freq_thread(void *arg) {
                                   device->openair0_cfg[0].tune_offset);
   uhd::tune_request_t rx_tune_req(device->openair0_cfg[0].rx_freq[0],
                                   device->openair0_cfg[0].tune_offset);
-  
   #ifdef FR3
-    s->usrp->set_tx_freq(FR3_FREQ);
-    s->usrp->set_rx_freq(FR3_FREQ);
+   s->usrp->set_tx_freq(FR3_FREQ);
+   s->usrp->set_rx_freq(FR3_FREQ);
   #else
-    s->usrp->set_tx_freq(tx_tune_req);
-    s->usrp->set_rx_freq(rx_tune_req);  
+   s->usrp->set_tx_freq(tx_tune_req);
+   s->usrp->set_rx_freq(rx_tune_req); 
   #endif
-  
+
   return NULL;
 }
 /*! \brief Set frequencies (TX/RX). Spawns a thread to handle the frequency change to not block the calling thread
@@ -846,11 +843,11 @@ int trx_usrp_set_freq(openair0_device *device, openair0_config_t *openair0_cfg)
   uhd::tune_request_t tx_tune_req(openair0_cfg[0].tx_freq[0], openair0_cfg[0].tune_offset);
   uhd::tune_request_t rx_tune_req(openair0_cfg[0].rx_freq[0], openair0_cfg[0].tune_offset);
   #ifdef FR3
-    s->usrp->set_tx_freq(FR3_FREQ);
-    s->usrp->set_rx_freq(FR3_FREQ);
+   s->usrp->set_tx_freq(FR3_FREQ);
+   s->usrp->set_rx_freq(FR3_FREQ);
   #else
-    s->usrp->set_tx_freq(tx_tune_req);
-    s->usrp->set_rx_freq(rx_tune_req);  
+   s->usrp->set_tx_freq(tx_tune_req);
+   s->usrp->set_rx_freq(rx_tune_req); 
   #endif
 
   return(0);
@@ -868,10 +865,10 @@ int openair0_set_rx_frequencies(openair0_device *device, openair0_config_t *open
          openair0_cfg[0].rx_freq[0],  openair0_cfg[0].tune_offset);
   //rx_tune_req.rf_freq_policy = uhd::tune_request_t::POLICY_MANUAL;
   //rx_tune_req.rf_freq = openair0_cfg[0].rx_freq[0];
-  #ifdef FR3    
-    s->usrp->set_rx_freq(FR3_FREQ);
-  #else    
-    s->usrp->set_rx_freq(rx_tune_req);  
+  #ifdef FR3   
+   s->usrp->set_rx_freq(FR3_FREQ);
+  #else   
+   s->usrp->set_rx_freq(rx_tune_req); 
   #endif
 
   return(0);
@@ -1308,7 +1305,7 @@ extern "C" {
       case 61440000:
         // from usrp_time_offset
         //openair0_cfg[0].samples_per_packet    = 2048;
-        openair0_cfg[0].tx_sample_advance     = 60; // FR3
+        openair0_cfg[0].tx_sample_advance     = 15;
         openair0_cfg[0].tx_bw                 = 40e6;
         openair0_cfg[0].rx_bw                 = 40e6;
         break;
@@ -1454,10 +1451,11 @@ extern "C" {
       s->usrp->set_rx_rate(cfg->sample_rate, i + choffset);
       uhd::tune_request_t rx_tune_req(cfg->rx_freq[i], cfg->tune_offset);
       #ifdef FR3
-        s->usrp->set_rx_freq(FR3_FREQ, i+choffset);
+       s->usrp->set_rx_freq(FR3_FREQ, i+choffset);
       #else
-        s->usrp->set_rx_freq(rx_tune_req, i+choffset);
+       s->usrp->set_rx_freq(rx_tune_req, i+choffset);
       #endif
+
       set_rx_gain_offset(cfg, i, bw_gain_adjust);
       ::uhd::gain_range_t gain_range = s->usrp->get_rx_gain_range(i+choffset);
       // limit to maximum gain
@@ -1488,10 +1486,11 @@ extern "C" {
       uhd::tune_request_t tx_tune_req(openair0_cfg[0].tx_freq[i],
                                       openair0_cfg[0].tune_offset);
       #ifdef FR3
-        s->usrp->set_tx_freq(FR3_FREQ, i+choffset);  
+       s->usrp->set_tx_freq(FR3_FREQ, i+choffset);
       #else
-        s->usrp->set_tx_freq(tx_tune_req, i+choffset);
+       s->usrp->set_tx_freq(tx_tune_req, i+choffset);
       #endif
+
       s->usrp->set_tx_gain(gain_range_tx.stop()-openair0_cfg[0].tx_gain[i],i+choffset);
       LOG_I(HW,"USRP TX_GAIN:%3.2lf gain_range:%3.2lf tx_gain:%3.2lf\n", gain_range_tx.stop()-openair0_cfg[0].tx_gain[i], gain_range_tx.stop(), openair0_cfg[0].tx_gain[i]);
     }
