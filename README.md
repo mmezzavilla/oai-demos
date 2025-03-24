@@ -67,6 +67,7 @@ https://docs.google.com/document/d/117JxyvUStMudBnMqmVWtjznl5dOxheBT28dS8kYadgY/
 ## N310 image 
 
 https://kb.ettus.com/Writing_the_USRP_File_System_Disk_Image_to_a_SD_Card
+https://kb.ettus.com/USRP_N300/N310/N320/N321_Getting_Started_Guide
 https://kb.ettus.com/OAI_Reference_Architecture_for_5G_and_6G_Research_with_USRP
 
 ```
