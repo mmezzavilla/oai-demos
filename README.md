@@ -71,7 +71,6 @@ https://kb.ettus.com/OAI_Reference_Architecture_for_5G_and_6G_Research_with_USRP
 
 ```
 sudo uhd_images_downloader -t sdimg -t n3xx
-```
-```
 sudo dd if=/usr/local/share/uhd/images/usrp_n3xx_fs.sdimg of=/dev/sda bs=1M
+sync
 ```
