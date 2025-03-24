@@ -76,3 +76,7 @@ sudo uhd_images_downloader -t sdimg -t n3xx
 sudo dd if=/usr/local/share/uhd/images/usrp_n3xx_fs.sdimg of=/dev/sda bs=1M
 sync
 ```
+Then, load the XG image for dual port operations: 
+```
+uhd_image_loader --args "type=n3xx,addr=192.168.20.2,fpga=XG"
+```
