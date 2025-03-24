@@ -54,7 +54,7 @@ sudo ./build_oai -w USRP
 ```
 Then, you can launch the gNodeB with the same command. Make sure you set att_tx = 40 and att_rx = 20 in the config file.   
 ```
-sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.conf --nokrnmod --usrp-tx-thread-config 1 --tune-offset 30000000 --gNBs.[0].min_rxtxtime 5
+sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_nyu.conf --nokrnmod --usrp-tx-thread-config 1 --tune-offset 30720000 --gNBs.[0].min_rxtxtime 5
 ```
 ## OAI UE at FR3 
 ```
