@@ -1,4 +1,3 @@
-\
 # OAI demos
 
 ## Quectel configuration
