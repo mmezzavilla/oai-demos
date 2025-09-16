@@ -46,13 +46,22 @@ cd ~/openairinterface5g/cmake_targets/ran_build/build
 sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_polimi_marco_elmi.conf --gNBs.[0].min_rxtxtime 5 --tune-offset 30720000
 ```
 
-For the UE (gain is very sensitive, depending on the distance you should run some tests and find the best gain)
+For the UE (gain is very sensitive) so
 
+If you are doing a very close transmission with USRP I highly suggest you do this change:
+Go to openairinterface/openair1/PHY/impl_defs_top.h and change:
+
+```
+#define INCREASE_IN_RXGAIN 1
+```
+This will make it s.t when the flag --agc is on the step for the gain added is only 1dB during the initial sync. This will take the power best fit since having the Tx and Rx be to close the constellation gets distorted very quickly. (Granted this makes the initial sync take a little bit much more time but it is worth it)
+
+To run the UE (se the --ue-rxgain low (~60) so that it chooses the best gain :
 
 ```
 cd ~/openairinterface5g/cmake_targets/ran_build/build
 
-sudo ./nr-uesoftmodem --band 78 -C 3319680000 -r 106 --numerology 1 --ssb 516   -E --ue-fo-compensation --uicc0.imsi 001010000000001 -d --ue-rxgain 85 --ue-txgain 10 --agc
+sudo ./nr-uesoftmodem --band 78 -C 3319680000 -r 106 --numerology 1 --ssb 516   -E --ue-fo-compensation --uicc0.imsi 001010000000001 -d --ue-rxgain 60 --ue-txgain 10 --agc
 
 ```
 
