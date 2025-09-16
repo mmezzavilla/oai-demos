@@ -18,6 +18,11 @@ For the UE, use this command:
 cd ~/openairinterface5g/cmake_targets/ran_build/build
 sudo ./nr-uesoftmodem --numerology 1 --band 78 -C 3319320000 -r 106 --numerology 1 --ssb 144 -E
 ```
+```
+cd ~/openairinterface5g/cmake_targets/ran_build/build
+sudo ./nr-uesoftmodem -C 3309420000 -r 51 --numerology 1 --ssb 144 
+```
+
 
 ## Quectel configuration
 
