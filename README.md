@@ -20,7 +20,7 @@ sudo ./nr-uesoftmodem --numerology 1 --band 78 -C 3319320000 -r 106 --numerology
 ```
 ```
 cd ~/openairinterface5g/cmake_targets/ran_build/build
-sudo ./nr-uesoftmodem --band 78 -C 3619200000 -r 106 --numerology 1 --ssb 516  -E --ue-fo-compensation --uicc0.imsi 001010000000001 -d --ue-rxgain 100 --ue-txgain 20 
+sudo ./nr-uesoftmodem --band 78 -C 4009260000 -r 51 --numerology 1 --ssb 144   -E --ue-fo-compensation --uicc0.imsi 001010000000001 -d --ue-rxgain 100 --ue-txgain 20 
 
 ```
 
