@@ -24,7 +24,7 @@ changes:
        3.2. GNB_IPV4_ADDRESS_FOR_NG_AMF              = "172.31.0.1/24";
    
        3.3. GNB_IPV4_ADDRESS_FOR_NGU                 = "172.31.0.1/24"; 
-5. Changed some PLMN (Public Land Mobile Network) again (following the OAIBOX .yaml file):
+4. Changed some PLMN (Public Land Mobile Network) again (following the OAIBOX .yaml file):
    
        4.1. mcc = 001;
        4.2. mnc = 01;
