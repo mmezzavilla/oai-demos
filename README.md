@@ -64,12 +64,15 @@ ifconfig
 ```
 To run a UDP network performance test we do on the UE terminal: 
 ```
-# Replace <your_local_ip> with your actual IP address of the UE (e.g., 10.0.0.14)
-iperf -s -u -i 1 -B <your_local_ip>
+# Replace <ue_ip> with your actual IP address of the UE (e.g., 10.0.0.14)
+iperf -s -u -i 1 -B <ue_ip>
 ```
 On the gNB side:
 
 ```
+# Replace <ue_ip> with your actual IP address of the UE (e.g., 10.0.0.14)
+# Replace 
+sudo docker exec -it oai-ext-dn iperf -u -t 86400 -i 1 -fk -B <ue_ip> -b 125M -c <ue_ip>
 ```
 ## Quectel configuration
 
