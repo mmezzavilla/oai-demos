@@ -16,7 +16,7 @@ sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band
 For the UE, use this command:
 ```
 cd ~/openairinterface5g/cmake_targets/ran_build/build
-sudo ./nr-uesoftmodem --numerology 1 --band 41 -C 3319320000 -r 106 --numerology 1 --ssb 144 -E
+sudo ./nr-uesoftmodem --numerology 1 --band 78 -C 3319320000 -r 106 --numerology 1 --ssb 144 -E
 ```
 
 ## Quectel configuration
