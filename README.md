@@ -1,5 +1,25 @@
 # OAI demos
 
+## PoliMI Setup
+
+First, launch the USRP N310 script
+```
+cd ~/Downloads
+sudo ./n310_script.sh
+sudo uhd_find_devices
+```
+Then, launch the 5G Core Network using the OAIBOX Dashboard, and the gNodeB from terminal using this command:
+```
+cd ~/openairinterface5g/cmake_targets/ran_build/build
+sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band77.fr1.273PRB.2x2.usrpn300.conf --gNBs.[0].min_rxtxtime 6 --usrp-tx-thread-config 1
+```
+For the UE, use this command:
+```
+cd ~/openairinterface5g/cmake_targets/ran_build/build
+sudo ./nr-uesoftmodem -r 273 --numerology 1 --band 78 -C 3949740000 --ue-fo-compensation -E --uicc0.imsi 001010000000001 --ssb 1492 
+
+```
+
 ## Quectel configuration
 
 First, make sure you connect the Quectel to a different machine - cannot be the same machine where you run the gNB.
