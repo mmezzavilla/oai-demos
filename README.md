@@ -19,15 +19,16 @@ changes:
 2. Set some powers a bit higher: ssPBCH_BlockPower = -20; max_pdschReferenceSignalPower = -24; 
 3. Changed the ip in order to be able to get an actual ip on the UE side (following the OAIBOX .yaml file):
    
-    3.1. amf_ip_address = ({ ipv4 = "172.31.0.132"; });
+       3.1. amf_ip_address = ({ ipv4 = "172.31.0.132"; });
    
-    3.2. GNB_IPV4_ADDRESS_FOR_NG_AMF              = "172.31.0.1/24";
+       3.2. GNB_IPV4_ADDRESS_FOR_NG_AMF              = "172.31.0.1/24";
    
-    3.3. GNB_IPV4_ADDRESS_FOR_NGU                 = "172.31.0.1/24"; 
+       3.3. GNB_IPV4_ADDRESS_FOR_NGU                 = "172.31.0.1/24"; 
 5. Changed some PLMN (Public Land Mobile Network) again (following the OAIBOX .yaml file):
-    4.1. mcc = 001;
-    4.2. mnc = 01;
-    4.3. sd  = 0xFFFFFF; 
+   
+       4.1. mcc = 001;
+       4.2. mnc = 01;
+       4.3. sd  = 0xFFFFFF; 
 
 To run the gnb:
 
