@@ -56,7 +56,16 @@ sudo ./nr-uesoftmodem --band 78 -C 3319680000 -r 106 --numerology 1 --ssb 516   
 
 ```
 
+### Running some ip  tests with OAI
+If all things are done right running ifconfig will get you the ip of the UE in the terminal as oaitun_ue1
 
+```
+ifconfig
+```
+To run a UDP network performance test we do on the UE terminal: 
+```
+ifconfig
+```
 
 ## Quectel configuration
 
