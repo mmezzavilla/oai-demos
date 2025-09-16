@@ -33,7 +33,7 @@ changes:
 To run the gnb:
 
 ```
-cd ~/openairinterface5g/cmake-targets/ran-build/build
+cd ~/openairinterface5g/cmake_targets/ran_build/build
 
 sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_polimi_marco_elmi.conf --gNBs.[0].min_rxtxtime 5 --tune-offset 30720000
 ```
@@ -42,7 +42,7 @@ For the UE (gain is very sensitive, depending on the distance you should run som
 
 
 ```
-cd ~/openairinterface5g/cmake-targets/ran-build/build
+cd ~/openairinterface5g/cmake_targets/ran_build/build
 
 sudo ./nr-uesoftmodem --band 78 -C 3319680000 -r 106 --numerology 1 --ssb 516   -E --ue-fo-compensation --uicc0.imsi 001010000000001 -d --ue-rxgain 85 --ue-txgain 10 --agc
 
