@@ -8,21 +8,37 @@ cd ~/Downloads
 sudo ./n310_script.sh
 sudo uhd_find_devices
 ```
-Then, launch the 5G Core Network using the OAIBOX Dashboard, and the gNodeB from terminal using this command:
-```
-cd ~/openairinterface5g/cmake_targets/ran_build/build
-sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band66.fr1.106PRB.usrpn300.conf --gNBs.[0].min_rxtxtime 6 --usrp-tx-thread-config 1
-```
-For the UE, use this command:
-```
-cd ~/openairinterface5g/cmake_targets/ran_build/build
-sudo ./nr-uesoftmodem --numerology 1 --band 78 -C 3319320000 -r 106 --numerology 1 --ssb 144 -E
-```
-```
-cd ~/openairinterface5g/cmake_targets/ran_build/build
-sudo ./nr-uesoftmodem --band 78 -C 3319680000 -r 106 --numerology 1 --ssb 516   -E --ue-fo-compensation --uicc0.imsi 001010000000001 -d --ue-rxgain 100 --ue-txgain 20 
+Then, launch the 5G Core Network using the OAIBOX Dashboard.
+
+gNB needs to be ran next:
+
+Elmi:
+I made a new config file named:n310_polimi_marco_elmi.conf  ,
+changes: 
+1. from 2 to 1 antenna (interesting for 2 rx antennas it works for 2 tx you get segmentation fault) 
+2. Set some powers a bit higher: ssPBCH_BlockPower = -20; max_pdschReferenceSignalPower = -24; 
+3. Changed the ip in order to be able to get an actual ip on the UE side (following the OAIBOX .yaml file):
+    3.1. amf_ip_address = ({ ipv4 = "172.31.0.132"; });
+    3.2. GNB_IPV4_ADDRESS_FOR_NG_AMF              = "172.31.0.1/24";
+    3.3. GNB_IPV4_ADDRESS_FOR_NGU                 = "172.31.0.1/24"; 
+4. Changed some PLMN (Public Land Mobile Network) again (following the OAIBOX .yaml file):
+    4.1. mcc = 001;
+    4.2. mnc = 01;
+    4.3. sd  = 0xFFFFFF; 
+
+To run the gnb:
 
 ```
+sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/n310_polimi_marco_elmi.conf --gNBs.[0].min_rxtxtime 5 --tune-offset 30720000
+```
+
+For the UE (gain is very sensitive, depending on the distance you should run some tests and find the best gain)
+
+
+```
+
+```
+
 
 
 ## Quectel configuration
