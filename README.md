@@ -11,7 +11,7 @@ sudo uhd_find_devices
 Then, launch the 5G Core Network using the OAIBOX Dashboard, and the gNodeB from terminal using this command:
 ```
 cd ~/openairinterface5g/cmake_targets/ran_build/build
-sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.band78.sa.fr1.106PRB.2x2.usrpn310.conf --gNBs.[0].min_rxtxtime 6 --usrp-tx-thread-config 1
+sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band66.fr1.106PRB.usrpn300.conf --gNBs.[0].min_rxtxtime 6 --usrp-tx-thread-config 1
 ```
 For the UE, use this command:
 ```
