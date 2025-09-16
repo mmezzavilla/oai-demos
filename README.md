@@ -17,8 +17,8 @@ I made a new config file named:n310_polimi_marco_elmi.conf  ,
 changes: 
 1. from 2 to 1 antenna (interesting for 2 rx antennas it works for 2 tx you get segmentation fault) 
 
-         pdsch_AntennaPorts                                        = 1;
-         pusch_AntennaPorts                                        = 1;
+         pdsch_AntennaPorts                = 1;
+         pusch_AntennaPorts                = 1;
          nb_tx = 1
          nb_rx = 2
 1. Set some powers a bit higher: 
