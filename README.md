@@ -64,9 +64,13 @@ ifconfig
 ```
 To run a UDP network performance test we do on the UE terminal: 
 ```
-ifconfig
+# Replace <your_local_ip> with your actual IP address of the UE (e.g., 10.0.0.14)
+iperf -s -u -i 1 -B <your_local_ip>
 ```
+On the gNB side:
 
+```
+```
 ## Quectel configuration
 
 First, make sure you connect the Quectel to a different machine - cannot be the same machine where you run the gNB.
